@@ -18,3 +18,6 @@ check-env:
 	
 install: $(pluginfile)
 	cp $(pluginfile) $(RDECK_BASE)/libext
+
+load-job: 
+	rd-jobs load -p $(RUNDECK_PROJECT) -F yaml -f job.yaml
