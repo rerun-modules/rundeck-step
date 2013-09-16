@@ -1,6 +1,6 @@
 #!/usr/bin/env roundup
 #
-#/ usage:  rerun stubbs:test -m rundeck-plugin -p node-step-plugin [--answers <>]
+#/ usage:  rerun stubbs:test -m rundeck-step -p node-step-plugin [--answers <>]
 #
 
 # Helpers
@@ -26,8 +26,8 @@ it_generates_a_plugin() {
 		--arguments false --required false  --default "''"
 
 	# Generate the plugin source base
-	tmpdir=$(mktemp -d /tmp/rundeck-plugin.XXXXX)
-	rerun rundeck-plugin:node-step-plugin --module $module --command $command --dir "$tmpdir"
+	tmpdir=$(mktemp -d /tmp/rundeck-step.XXXXX)
+	rerun rundeck-step:node-step-plugin --module $module --command $command --dir "$tmpdir"
 
 	test -f "$tmpdir/Makefile"
 	test -f "$tmpdir/README.md"
