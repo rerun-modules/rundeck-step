@@ -1,8 +1,20 @@
-The *rundeck-plugin* commands help you create [Rundeck](http://rundeck.org)
-workflow step plugins from your rerun commands.
+You've created an awesome new rerun command that is
+flexible and environment independent because of 
+the options you've defined for it.
+Your command might have required options and some with defaults. 
 
-The *rundeck-plugin* module uses metadata about your commands to generate
-a plugin configuration properties to present a similar rundeck web UI.
+How do you share your command as an automation building block to 
+people writing process automation jobs?
+Expose your command as a Rundeck](http://rundeck.org) job step!
+
+The *rundeck-plugin:node-step* command will create Rundeck
+[workflow step plugins](http://rundeck.org/docs/developer/workflow-step-plugin-development.html#workflow-node-step-plugin) 
+from your rerun command definition.
+The *rundeck-plugin* uses metadata from your rerun command to generate
+a plugin that defines configuration properties that map your rerun
+command's options into Rundeck job step UI inputs. 
+Visible as a plugin, Rundeck job writers see your rerun command as a well defined
+workflow step in the GUI or as formailzed configuration items in a job definition file.
 
 Example:
 --------
@@ -10,7 +22,7 @@ Example:
 Imagine you have a command, "waitfor:process", that checks for a system process  
 and you would like to make it a custom job step.
 
-Imagine the following command options: `rerun waitfor:process --name <> [--interval <30>]
+Imagine the following command options: `rerun waitfor:process --name <> [--interval <30>]`.
 The `--name <>` option is required while the `--interval` option is not
 and has a default value, 30.
 
