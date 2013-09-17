@@ -111,7 +111,7 @@ generate_command_args() {
 			clopts=(${clopts[*]:-} "--${option} \"\${option.${option}}\"")
 		fi
 	done
-	printf "%s" "${clopts[*]}"
+	printf "%s" "${clopts[*]:-}"
 }
 
 
